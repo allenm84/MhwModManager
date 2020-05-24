@@ -57,11 +57,20 @@
     <Compile Include="MhwMod.cs" />
     <Compile Include="MhwInstall.cs" />
     <Compile Include="MhwModFile.cs" />
+    <Compile Include="MhwModInfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MhwModInfoDialog.Designer.cs">
+      <DependentUpon>MhwModInfoDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MhwModInfoDialog.resx">
+      <DependentUpon>MhwModInfoDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
