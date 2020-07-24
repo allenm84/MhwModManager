@@ -36,9 +36,13 @@ namespace MHWModManager
 
       var install = await Task.Run(() => new MhwInstall(mhwInstallFolder));
       var modDirectory = new DirectoryInfo(modsFolder);
-      foreach (var modArchive in modDirectory.EnumerateFiles())
+
+      foreach (var modCategory in modDirectory.EnumerateDirectories())
       {
-        mhwModBindingSource.Add(new MhwMod(install, modArchive));
+        foreach (var modArchive in modCategory.EnumerateFiles())
+        {
+          mhwModBindingSource.Add(new MhwMod(install, modArchive));
+        }
       }
 
       SetIsWorking(false);
