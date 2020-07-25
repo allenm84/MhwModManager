@@ -1,2 +1,2 @@
 # MhwModManager
-App to manager mods for Monster Hunter World (MHW)
+App to manage mods for Monster Hunter World (MHW)
