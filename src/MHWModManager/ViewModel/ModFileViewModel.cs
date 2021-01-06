@@ -69,13 +69,20 @@ namespace MHWModManager
 
     private void DoDelete()
     {
-      var text = CanUninstall()
+      var isInstalled = CanUninstall();
+
+      var text = isInstalled
         ? "Are you sure you want to uninstall and delete this mod?"
         : "Are you sure you want to delete this mod?";
 
       if (Messenger.Confirm(text, "Confirm"))
       {
-        DoUninstall();
+        if (isInstalled)
+        {
+          DoUninstall();
+        }
+
+        _modFile.Delete();
         Deleted?.Invoke(this, EventArgs.Empty);
       }
     }
